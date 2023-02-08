@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer View</title>
+    <link rel="stylesheet" href="CSS/CSSCustomerView.css" />
+</head>
+<body>
+    <h1>Customer View</h1>s
+    <!-- Customer View -->
+    <div id="customer-view">
+
+        <div>
+            <h2>Now Serving: <span id="now-serving-value"></span></h2>
+        </div>
+        <div>
+            <h2>Last Number: <span id="last-number-value"></span></h2>
+        </div>
+        <div>
+            <button id="take-number-btn">Take a Number</button>
+            <div id="ticket-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Ticket Information</h2>
+                    <p>Ticket Number: <span id="ticket-number"></span></p>
+                </div>
+            </div>
+            <script src="JS/JSCustomerView.js"></script>
+        </div>
+        <div id="counters">
+            <div class="counter">
+                <div class="dot green"></div>
+                <p class="counter-number">Counter 1</p>
+                <p class="current-number">Current Number: <span id="counter-1-value"></span></p>
+            </div>
+            <div class="counter">
+                <div class="dot green"></div>
+                <p class="counter-number">Counter 2</p>
+                <p class="current-number">Current Number: <span id="counter-1-value"></span></p>
+            </div>
+            <div class="counter">
+                <div class="dot green"></div>
+                <p class="counter-number">Counter 3</p>
+                <p class="current-number">Current Number: <span id="counter-1-value"></span></p>
+            </div>
+            <div class="counter">
+                <div class="dot green"></div>
+                <p class="counter-number">Counter 4</p>
+                <p class="current-number">Current Number: <span id="counter-1-value"></span></p>
+            </div>
+            <!-- Add more counters if needed -->
+        </div>
+    </div>
+
+</body>
+</html>

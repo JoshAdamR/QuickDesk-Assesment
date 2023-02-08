@@ -1,0 +1,91 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+#counter-management-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+#counter-management {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+#counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-right: 40px;
+    width: 200px;
+    height: 300px;
+}
+
+.counter-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+}
+
+#go-offline-1, #go-offline-2, #go-offline-3, #go-offline-4 {
+    background-color: red;
+}
+
+#complete-current-1, #complete-current-2, #complete-current-3, #complete-current-4 {
+    background-color: green;
+}
+
+#call-next-1, #call-next-2, #call-next-3, #call-next-4 {
+    background-color: blue;
+}
+
+#message-1, #message-2, #message-3, #message-4{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 40px;
+}
+
+button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+}
+
+button:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--c);
+    color: #fff;
+}
