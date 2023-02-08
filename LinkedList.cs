@@ -2,6 +2,23 @@
 {
     class LinkList
     {
+        private static LinkList? _list;
+
+        private LinkList() 
+        {
+            head = null;
+            tail = null;
+            count = 0;
+        }
+
+        public static LinkList NewList() //To create new list
+        {
+            _list = new LinkList();
+            return _list;
+        }
+
+
+
         class Node //create a node
         {
             public string Data;
@@ -20,14 +37,9 @@
         private Node? head;
         private Node? tail;
 
-        public LinkList()
-        {
-            head = null;
-            tail = null;
-            count = 0;
-        }
 
-        public void AddFromTail(string value)
+
+        public void AddFromTail(string value) //Add node to the tail
         {
             Node newNode = new Node(value);
             if (head == null)
@@ -40,10 +52,11 @@
                 newNode.Prev = tail;
                 tail!.Next = newNode;
                 tail = newNode;
-
             }
             count++;
         }
+
+
 
         private string RemoveNode(Node? node) //Remove node from head if true, remove tail if false
         {
@@ -70,14 +83,14 @@
                 node.Prev = null;
                 node.Next = null;
                 count--;
-
+                
                 return node.Data;
             }
             else
             {
                 return "List is empty";
             }
-
+            
         }
 
         public string RemoveFromHead()
@@ -90,7 +103,9 @@
             return RemoveNode(tail);
         }
 
-        public string PrintList() //Print all node
+
+
+        public string PrintList() //Print all, O(n) 
         {
             if (head != null)
             {
@@ -108,6 +123,8 @@
                 return "List is empty";
             }
         }
+
+        
 
         public int Size()
         {

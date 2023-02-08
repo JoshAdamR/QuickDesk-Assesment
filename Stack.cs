@@ -1,35 +1,10 @@
-﻿using QueueList;
-
-namespace BuildQueuing
+﻿namespace BuildQueuing
 {
-    class LIFOQUEUE : IQueuable
+    class LIFOQUEUE : QueueBase
     {
-        private LinkList stack;
-
-        public LIFOQUEUE() //Create new list
+        public override string Dequeue() //Change Dequeue() method operation
         {
-            stack = new LinkList();
-        }
-
-        public string Enqueue(string value)
-        {
-            stack.AddFromTail(value);
-            return GetQueue();
-        }
-
-        public string Dequeue()
-        {
-            return stack.RemoveFromTail();
-        }
-
-        public string GetQueue()
-        {
-            return stack.PrintList();
-        }
-
-        public int Size()
-        {
-            return stack.Size();
+            return GetList.RemoveFromTail();
         }
     }
 }
