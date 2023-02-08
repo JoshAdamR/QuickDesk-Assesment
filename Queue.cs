@@ -1,58 +1,35 @@
-﻿namespace BuildQueuing
+﻿using QueueList;
+
+namespace BuildQueuing
 {
     class FIFOQUEUE : IQueuable
     {
-        private string[] _queue;
-        private int _size;
+        private LinkList queue;
 
-        public FIFOQUEUE()
+        public FIFOQUEUE() //Create new list
         {
-            _queue = new string[0];
-            _size = 0;
+            queue = new LinkList();
         }
 
-        public string Enqueue(string value) //rebuild array to add more item
+        public string Enqueue(string value)
         {
-            int newSize = _size + 1;
-            string[] newQueue = new string[newSize];
-            for (int i = 0; i < _size; i++)
-            {
-                newQueue[i] = _queue[i];
-            }
-            newQueue[newSize - 1] = value;
-            _queue = newQueue;
-            _size = newSize;
+            queue.AddFromTail(value);
             return GetQueue();
         }
 
-        public string Dequeue() //rebuild array and remove more item
+        public string Dequeue()
         {
-            string item = _queue[0];
-            int newSize = _size - 1;
-            string[] newQueue = new string[newSize];
-            for (int i = 0; i < newSize; i++)
-            {
-                newQueue[i] = _queue[i + 1];
-            }
-            _queue = newQueue;
-            _size = newSize;
-            return item;
+            return queue.RemoveFromHead();
         }
 
-        public string GetQueue() 
+        public string GetQueue()
         {
-            string joinedItem = _queue[0]; 
-            for (int i = 1; i < _queue.Length; i++) //Join items into string
-            {
-                joinedItem += "," + _queue[i];
-
-            }
-            return joinedItem;
+            return queue.PrintList();
         }
 
         public int Size()
         {
-            return _size;
+            return queue.Size();
         }
     }
 }
